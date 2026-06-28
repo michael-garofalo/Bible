@@ -5,6 +5,11 @@ This project is about making the Bible available as a web app. It has two modes.
 The left and right navigation buttons can be used to change a chapter, while the center button toggles between standard mode and search mode.
 
 
+## Link
+It's online! You can read the Bible and try the web app.
+[https://michael-garofalo.github.io/Bible/](https://michael-garofalo.github.io/Bible/)
+
+
 ## Design Requirements
 * Only vanilla web tech (HTML, CSS, Javascript)
 * Lightweight
