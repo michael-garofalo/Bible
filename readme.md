@@ -19,7 +19,7 @@ It's online! You can read the Bible and try the web app.
 
 ## Catholic Public Domain Version (CPDV)
 
-The Bible version contained in this web app is *“a new translation of the Latin Vulgate, using the Douay Rheims as a guide”.* Translator and Editor Ronald L. Conte Jr. completing a five-year project on March 28, 2009.
+The Bible version contained in this web app is *“a new translation of the Latin Vulgate, using the Douay Rheims as a guide”.* Translator and Editor Ronald L. Conte Jr. completed a five-year project on March 28, 2009.
 
 * [https://sacredbible.org](https://sacredbible.org)
 * [https://ronconte.com/2017/08/30/my-translation-of-the-bible-the-cpdv/](https://ronconte.com/2017/08/30/my-translation-of-the-bible-the-cpdv/)
