@@ -1,0 +1,9 @@
+{
+     "name": "The Bible",
+     "short_name": "Bible",
+     "start_url": ".",
+     "scope": ".",
+     "description": "The Catholic Public Domain Version (CPDV) of the Bible as a searchable web app.",
+     "lang": "en-US",
+     "dir": "auto"
+}
