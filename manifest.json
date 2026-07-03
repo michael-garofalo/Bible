@@ -6,5 +6,5 @@
      "description": "The Catholic Public Domain Version (CPDV) of the Bible as a searchable web app.",
      "lang": "en-US",
      "dir": "auto",
-     "background_color": "#000000"
+     "background_color": "rgb(255, 255, 255)"
 }
