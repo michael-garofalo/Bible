@@ -36122,6 +36122,7 @@ function bibleSearchData() {
      let sr = 0;
      let tsr = 0;
      let o = 0;
+     let h;
 
      bst.innerText = "";
 
@@ -36144,10 +36145,27 @@ function bibleSearchData() {
                     r.insertAdjacentText("beforeend", t);
                     bst.insertAdjacentElement("beforeend", r);
                     sr++;
+
+                    if ("Highlight" in window) {
+                         const lc = r.lastChild;
+                         const range = new Range();
+                         const tlc = t.toLocaleLowerCase();
+                         range.setStart(lc, tlc.indexOf(s))
+                         range.setEnd(lc, tlc.indexOf(s) + s.length);
+                         h
+                              ? h.add(range)
+                              : h = new Highlight(range);
+                         console.log({i}, cpdv.length)
+                    }
+
                }
                o++;
                tsr++;
           }
+     }
+
+     if (h) {
+          CSS.highlights.set("bible-search-highlight", h);
      }
 
      bst.scrollTo(0, 0);
