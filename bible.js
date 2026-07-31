@@ -36122,7 +36122,6 @@ function bibleSearchData() {
      let sr = 0;
      let tsr = 0;
      let o = 0;
-     let h;
 
      bst.innerText = "";
 
@@ -36133,39 +36132,33 @@ function bibleSearchData() {
                if (o >= bibleSearchOffset && sr < msr) {
                     const r = document.createElement("div");
                     const e = document.createElement("span");
+                    const h = document.createElement("b");
                     const b = books[cpdv[i][0] - 1][0];
                     const c = cpdv[i][1];
                     const v = cpdv[i][2];
                     const t = cpdv[i][3];
+                    const x = t.toLowerCase().indexOf(s.toLowerCase());
+                    const a = [];
+                    if (x >= 0) {
+                         a.push(t.substring(0, x));
+                         a.push(t.substring(x, x + s.length))
+                         a.push(t.substring(x + s.length))
+                    }
                     e.insertAdjacentText("beforeend", b + " " + c + ":" + v)
                     r.setAttribute("id", "bible-search-row-" + cpdv[i][0] + "-" + c + "-" + v);
                     r.classList.add("bible-search-row")
                     r.insertAdjacentElement("beforeend", e);
                     r.insertAdjacentText("beforeend", " — ");
-                    r.insertAdjacentText("beforeend", t);
+                    r.insertAdjacentText("beforeend", a[0]);
+                    h.insertAdjacentText("beforeend", a[1]);
+                    r.insertAdjacentElement("beforeend", h);
+                    r.insertAdjacentText("beforeend", a[2]);
                     bst.insertAdjacentElement("beforeend", r);
                     sr++;
-
-                    if ("Highlight" in window) {
-                         const lc = r.lastChild;
-                         const range = new Range();
-                         const tlc = t.toLocaleLowerCase();
-                         range.setStart(lc, tlc.indexOf(s))
-                         range.setEnd(lc, tlc.indexOf(s) + s.length);
-                         h
-                              ? h.add(range)
-                              : h = new Highlight(range);
-                         console.log({i}, cpdv.length)
-                    }
-
                }
                o++;
                tsr++;
           }
-     }
-
-     if (h) {
-          CSS.highlights.set("bible-search-highlight", h);
      }
 
      bst.scrollTo(0, 0);
@@ -36180,9 +36173,9 @@ function bibleSearchData() {
           bst.insertAdjacentElement("beforeend", e);
 
           if (tsr > sr && tsr > (sr + bibleSearchOffset)) {
-               if (tm) { console.log("bibleSearchOffset: " + bibleSearchOffset) };
+               if (tm) { console.debug("bibleSearchOffset: " + bibleSearchOffset) };
                bibleSearchOffset = Math.min(tsr, Number(bibleSearchOffset + sr));
-               if (tm) { console.log("bibleSearchOffset: " + bibleSearchOffset) };
+               if (tm) { console.debug("bibleSearchOffset: " + bibleSearchOffset) };
           }
      }
 }
